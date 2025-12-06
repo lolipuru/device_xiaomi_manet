@@ -9,21 +9,7 @@
 $(call inherit-product, device/xiaomi/sm8650-common/common.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/xiaomi/houji/houji-vendor.mk)
-
-# Euicc
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-euiccgoogle.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-euiccgoogle.xml
-
-PRODUCT_PACKAGES += \
-    XiaomiEuicc \
-    DeviceSettings
-
-PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
-
-# init
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/init.houji.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.houji.rc \
+$(call inherit-product, vendor/xiaomi/manet/manet-vendor.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -31,7 +17,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    FrameworksResHouji \
-    HoujiEuiccOverlay \
-    SettingsOverlayHouji \
-    SystemUIResHouji
+    FrameworksResManet \
+    SettingsOverlayManet \
+    SystemUIResManet

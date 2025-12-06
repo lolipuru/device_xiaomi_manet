@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/houji
+DEVICE_PATH := device/xiaomi/manet
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 # Inherit from sm8650-common
@@ -36,7 +36,7 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(KERNEL_PATH)/system_dlkm/,$(TARGET_COPY_OUT_SYSTEM_DLKM)/lib/modules/6.1.25-android14-11-g9f6af9a6c2cc-ab11205628)
 
 # OTA
-TARGET_OTA_ASSERT_DEVICE := houji,houjiin
+TARGET_OTA_ASSERT_DEVICE := manet
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/properties/odm.prop
@@ -45,4 +45,4 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/configs/properties/odm.prop
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
-include vendor/xiaomi/houji/BoardConfigVendor.mk
+include vendor/xiaomi/manet/BoardConfigVendor.mk
